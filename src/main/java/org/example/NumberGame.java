@@ -2,8 +2,33 @@ package org.example;
 
 
 public class NumberGame {
+    int guesses = 0;
+    int score = 0;
+
+
+    public NumberGame(int guesses, int score) {
+        this.guesses = guesses;
+        this.score = score;
+    }
+
+
+    // Generate a random number within a specified range, such as 1 to 100.
+    public void startGame() {
+        guesses = 3;
+
+        System.out.println("Welcome to the Number Game!");
+        System.out.println("The computer will generate a random number from 1 to 10. Can you guess what it is?");
+
+        int min = 1;
+        int max = 10;
+        int randomNum = min + (int) (Math.random() * ((max - min) + 1));
+        System.out.println("Random number is: " + randomNum);
+
+        getUserGuess(randomNum, guesses);
+    }
+
+
     /*
-        1. Generate a random number within a specified range, such as 1 to 100.
         2. Prompt the user to enter their guess for the generated number.
         3. Compare the user's guess with the generated number and provide feedback on whether the guess
         is correct, too high, or too low.
@@ -14,6 +39,4 @@ public class NumberGame {
         6. Add the option for multiple rounds, allowing the user to play again.
         7. Display the user's score, which can be based on the number of attempts taken or rounds won.
      */
-
-
 }
