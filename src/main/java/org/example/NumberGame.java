@@ -42,14 +42,24 @@ public class NumberGame {
 
             System.out.println("Random number is: " + randomNum);
 
-
+            if (guessInput < randomNum) {
+                System.out.println("Too low! Guesses left: " + guesses);
+                getUserGuess(randomNum, guesses);
+            } else if (guessInput > randomNum) {
+                System.out.println("Too high! Guesses left: " + guesses);
+                getUserGuess(randomNum, guesses);
+            } else {
+                score++;
+                System.out.println("That's correct! Here's your score: " + score);
+                System.out.println("Would you like to play again? Enter 'Y' or 'N'.");
+                playAgain();
+            }
         } else {
             System.out.println("Sorry, you have no more guesses remaining. Game over!");
             System.out.println("Would you like to play again? Enter 'Y' or 'N'.");
             playAgain();
         }
     }
-
 
       /*
         3. Compare the user's guess with the generated number and provide feedback on whether the guess
