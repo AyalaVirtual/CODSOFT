@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.lang.*;
 
 
 public class NumberGame {
@@ -61,6 +62,18 @@ public class NumberGame {
         }
     }
 
-      // Add the option for multiple rounds, allowing the user to play again. Display the user's score, which can be based on the number of attempts taken or rounds won.
+    // Add the option for multiple rounds, allowing the user to play again. Display the user's score, which can be based on the number of attempts taken or rounds won.
+    public void playAgain() {
+        Scanner playScanner = new Scanner(System.in);
+        String playInput = playScanner.nextLine();
 
+        if (playInput.equalsIgnoreCase("Y")) {
+            startGame();
+        } else if (playInput.equalsIgnoreCase("N")) {
+            System.out.println("Ok, thanks for playing!");
+        } else {
+            System.out.println("Please enter 'Y' or 'N'.");
+            playAgain();
+        }
+    }
 }
