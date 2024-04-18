@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.*;
+
 
 public class NumberGame {
     int guesses = 0;
@@ -28,8 +30,28 @@ public class NumberGame {
     }
 
 
-    /*
-        2. Prompt the user to enter their guess for the generated number.
+    // Prompt the user to enter their guess for the generated number.
+    public void getUserGuess(int randomNum, int guesses) {
+        if (guesses >= 1) {
+            System.out.println("Enter your guess.");
+
+            Scanner guessScanner = new Scanner(System.in);
+            int guessInput = guessScanner.nextInt();
+
+            guesses--;
+
+            System.out.println("Random number is: " + randomNum);
+
+
+        } else {
+            System.out.println("Sorry, you have no more guesses remaining. Game over!");
+            System.out.println("Would you like to play again? Enter 'Y' or 'N'.");
+            playAgain();
+        }
+    }
+
+
+      /*
         3. Compare the user's guess with the generated number and provide feedback on whether the guess
         is correct, too high, or too low.
         4. Repeat steps 2 and 3 until the user guesses the correct number.
