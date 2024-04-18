@@ -25,7 +25,6 @@ public class NumberGame {
         int min = 1;
         int max = 10;
         int randomNum = min + (int) (Math.random() * ((max - min) + 1));
-        System.out.println("Random number is: " + randomNum);
 
         getUserGuess(randomNum, guesses);
     }
@@ -40,8 +39,6 @@ public class NumberGame {
             int guessInput = guessScanner.nextInt();
 
             guesses--;
-
-            System.out.println("Random number is: " + randomNum);
 
             if (guessInput < randomNum) {
                 System.out.println("Too low! Guesses left: " + guesses);
@@ -61,6 +58,7 @@ public class NumberGame {
             playAgain();
         }
     }
+
 
     // Add the option for multiple rounds, allowing the user to play again. Display the user's score, which can be based on the number of attempts taken or rounds won.
     public void playAgain() {
