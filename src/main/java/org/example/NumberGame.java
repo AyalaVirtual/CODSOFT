@@ -4,19 +4,17 @@ import java.util.Scanner;
 
 
 public class NumberGame {
-    int guesses = 0;
     int score = 0;
 
 
-    public NumberGame(int guesses, int score) {
-        this.guesses = guesses;
+    public NumberGame(int score) {
         this.score = score;
     }
 
 
     // This method starts the game and generates a random number from 1 to 10.
     public void startGame() {
-        guesses = 3;
+        int guesses = 3;
 
         System.out.println("Welcome to the Number Game!");
         System.out.println("The computer will generate a random number from 1 to 10. Can you guess what it is?");
