@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.*;
-import java.lang.*;
+import java.util.Scanner;
 
 
 public class NumberGame {
