@@ -5,52 +5,58 @@ import java.util.Scanner;
 
 
 public class StudentGradeCalculator {
-    ArrayList<Integer> gradesArray = new ArrayList<>();
-    int total = 0;
+
+    public StudentGradeCalculator() {
+    }
 
 
-    public ArrayList<Integer> getGradesArray() {
+    public void getGradesArray() {
         // Input: Take marks obtained (out of 100) in each subject.
         System.out.println("Enter grades separated by a space. Example: 100 75 80 92");
+
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
         String[] gradesInput = input.split(" ");
+        ArrayList<Integer> gradesArray = new ArrayList<>();
 
         for (int i = 0; i < gradesInput.length; i++) {
             gradesArray.add(Integer.parseInt(gradesInput[i]));
         }
 
-        // return gradesArray;
 
         // Calculate Total Marks: Sum up the marks obtained in all subjects.
+        int total = 0;
+
         for (int i = 0; i < gradesArray.size(); i++) {
             total += gradesArray.get(i);
         }
 
-        System.out.println("Total: " + total);
-        return gradesArray;
+
+        // Calculate Average Percentage: Divide the total marks by the total number of subjects to get the average percentage.
+        int average = total / gradesArray.size();
+
+
+        // Grade Calculation: Assign grades based on the average percentage achieved.
+        char grade;
+
+        if (average >= 90) {
+            grade = 'A';
+        } else if (average >= 80 && average < 90) {
+            grade = 'B';
+        } else if (average >= 70 && average < 80) {
+            grade = 'C';
+        } else if (average >= 60 && average < 70) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+
+        // Display Results: Show the total marks, average percentage, and the corresponding grade to the user.
+        System.out.println("Total marks: " + total);
+        System.out.println("Average percentage: " + average);
+        System.out.println("Grade: " + grade);
     }
-
-
-    // Calculate Total Marks: Sum up the marks obtained in all subjects.
-//    public int getTotal(int[] gradesArray) {
-//        for (int i = 0; i < gradesArray.length; i++) {
-//            total += gradesArray.get(i);
-//            System.out.println(gradesArray.get(i));
-//        }
-//
-//        return total;
-//    }
-
-
-    // Calculate Average Percentage: Divide the total marks by the total number of subjects to get the average percentage.
-
-
-    // Grade Calculation: Assign grades based on the average percentage achieved.
-
-
-    // Display Results: Show the total marks, average percentage, and the corresponding grade to the user
-
 
 }
