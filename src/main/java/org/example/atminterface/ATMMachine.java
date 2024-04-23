@@ -1,9 +1,9 @@
 package org.example.atminterface;
 
 public interface ATMMachine {
-    public int withdraw(int amount);
+    public double withdraw(double amount);
 
-    public int deposit(int amount);
+    public double deposit(double amount);
 
     public void checkBalance();
 }
