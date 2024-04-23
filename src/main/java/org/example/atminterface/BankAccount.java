@@ -16,9 +16,9 @@ public class BankAccount implements ATMMachine {
         // Validate user input to ensure it is within acceptable limits (e.g., sufficient balance for withdrawals). Display appropriate messages to the user based on their chosen options and the success or failure of their transactions.
         if (balance >= amount) {
             balance -= amount;
-            System.out.println("Withdrawal successful! Your new balance is " + balance);
+            System.out.println("Withdrawal successful! Your new balance is $" + balance);
         } else {
-            System.out.println("Withdrawal failed! Your new balance is " + balance);
+            System.out.println("Withdrawal failed! Your new balance is $" + balance);
         }
 
         return balance;
@@ -28,14 +28,13 @@ public class BankAccount implements ATMMachine {
     public double deposit(double amount) {
         balance += amount;
         // Display appropriate messages to the user based on their chosen options and the success or failure of their transactions.
-        System.out.println("Deposit successful! Your new balance is " + balance);
+        System.out.println("Deposit successful! Your new balance is $" + balance);
         return balance;
     }
 
     @Override
     public void checkBalance() {
-
         // Display appropriate messages to the user based on their chosen options and the success or failure of their transactions.
-
+        System.out.println("Your balance is $" + balance);
     }
 }
