@@ -29,6 +29,7 @@ public class BankAccount implements ATMMachine {
         balance += amount;
         // Display appropriate messages to the user based on their chosen options and the success or failure of their transactions.
         System.out.println("Deposit successful! Your new balance is " + balance);
+        return balance;
     }
 
     @Override
